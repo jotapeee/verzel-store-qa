@@ -10,10 +10,27 @@
     {
       "name": "CT-F01 - API",
       "request": {
-        "method": "GET",
+        "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P001\",\r\n      \"quantidade\": 1\r\n    }\r\n  ],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -51,8 +68,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P008\",\r\n      \"quantidade\": 1\r\n    }\r\n  ],\r\n  \"cupom\": \"bemvindo10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -62,8 +96,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P006\",\r\n      \"quantidade\": 1\r\n    }\r\n  ],\r\n  \"cupom\": \" BemVindo10 \"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -73,8 +124,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P006\",\r\n      \"quantidade\": 1\r\n    }\r\n  ],\r\n  \"cupom\": \" BemVindo10 \"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -84,8 +152,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P006\",\r\n      \"quantidade\": 1\r\n    }\r\n  ],\r\n  \"cupom\": \"teste\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -95,8 +180,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P007\",\r\n      \"quantidade\": 1\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -106,8 +208,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P007\",\r\n      \"quantidade\": 1\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -117,8 +236,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P005\",\r\n      \"quantidade\": 2\r\n    }\r\n  ],\r\n  \"cupom\": \"bemvindo10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -128,8 +264,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P005\",\r\n      \"quantidade\": 1\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -139,8 +292,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P005\",\r\n      \"quantidade\": 2\r\n    }\r\n  ],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -150,8 +320,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P005\",\r\n      \"quantidade\": 1\r\n    }\r\n  ],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -161,8 +348,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P005\",\r\n      \"quantidade\": 5\r\n    \r\n\r\n\r\n    }\r\n  ]\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -172,8 +376,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P005\",\r\n      \"quantidade\": 6\r\n      \r\n    \r\n\r\n\r\n    }\r\n  ]\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -183,8 +404,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P001\",\r\n      \"quantidade\": 3\r\n    },\r\n    {\r\n      \"produtoId\": \"P006\",\r\n      \"quantidade\": 2\r\n    }\r\n  ],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -194,8 +432,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P001\",\r\n      \"quantidade\": 2\r\n    },\r\n    {\r\n      \"produtoId\": \"P004\",\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"produtoId\": \"P006\",\r\n      \"quantidade\": 2\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -205,8 +460,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P001\",\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"produtoId\": \"P004\",\r\n      \"quantidade\": 1\r\n    }\r\n    ], \"cupom\": \"BEMVINDO10\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -216,8 +488,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P001\",\r\n      \"quantidade\": 2\r\n    }\r\n  ],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -227,8 +516,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P001\",\r\n      \"quantidade\": 1\r\n    }\r\n  ],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -238,8 +544,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P005\",\r\n      \"quantidade\": 1\r\n    }\r\n   \r\n  ],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -249,8 +572,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P005\",\r\n      \"quantidade\": 2\r\n    }\r\n   \r\n  ],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -260,8 +600,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P001\",\r\n      \"quantidade\": 2\r\n    },\r\n    {\r\n      \"produtoId\": \"P004\",\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"produtoId\": \"P006\",\r\n      \"quantidade\": 2\r\n    }\r\n  ],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -271,8 +628,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P002\",\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"produtoId\": \"P006\",\r\n      \"quantidade\": 1\r\n    }\r\n  ],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -282,8 +656,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P001\",\r\n      \"quantidade\": 1\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -293,8 +684,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P001\",\r\n      \"quantidade\": 10\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -304,8 +712,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P001\",\r\n      \"quantidade\": 1\r\n    }\r\n  ],\r\n  \"cupom\": \"BEM VINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -315,8 +740,25 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
-          "raw": ""
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
         }
       },
       "response": []
@@ -325,7 +767,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": ""
+      "value": "https://verzel-store.qa-test-verzel-store.workers.dev"
     }
   ]
 }
