@@ -293,6 +293,8 @@ Os testes principais foram executados com repetição para verificar estabilidad
 
 ## Instalação da automação
 
+Clone ou baixe este repositório antes de executar os comandos abaixo.
+
 ### Pré-requisitos
 
 Antes de executar os testes automatizados, é necessário possuir:
@@ -316,20 +318,6 @@ Depois, instale o navegador Chromium utilizado pelo Playwright:
 ```bash
 cd automation
 npx.cmd playwright install chromium
-cd ..
-```
-
-#### Linux / macOS
-
-```bash
-npm install --prefix automation
-```
-
-Depois:
-
-```bash
-cd automation
-npx playwright install chromium
 cd ..
 ```
 
@@ -363,26 +351,6 @@ Para abrir o relatório HTML após uma execução:
 
 ```bash
 npm.cmd run report --prefix automation
-```
-
-### Linux / macOS
-
-Os mesmos scripts podem ser executados sem o sufixo `.cmd`:
-
-```bash
-npm test --prefix automation
-```
-
-```bash
-npm run test:headed --prefix automation
-```
-
-```bash
-npm run test:ui --prefix automation
-```
-
-```bash
-npm run report --prefix automation
 ```
 
 ---
@@ -511,7 +479,6 @@ Na V2, a implementação da automação foi realizada com apoio de IA no ambient
 - ✅ Estabilidade validada
 - ✅ Suíte completa aprovada
 
----
 
 ## Autor
 
