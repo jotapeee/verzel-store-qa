@@ -1,0 +1,331 @@
+{
+  "info": {
+    "_postman_id": "a7dbbf3d-9352-48b4-8dad-533b8d007936",
+    "name": "Teste_Verzel",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54537729",
+    "_collection_link": "https://go.postman.co/collection/54537729-a7dbbf3d-9352-48b4-8dad-533b8d007936?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "CT-F01 - API",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F02 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"itens\": [\r\n    {\r\n      \"produtoId\": \"P005\",\r\n      \"quantidade\": 2\r\n    }\r\n  ],\r\n  \"cupom\": \"BEMVINDO10\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/carrinho/calcular",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "carrinho",
+            "calcular"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F03 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F04 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F05 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F06 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F07 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F09 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F11 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F12 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F14 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F15 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F16 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F17 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F18 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F19 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-F20 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-E01 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-E02 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-E03 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-E04 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-E10 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-E11 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-E12 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-E13 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-E14 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CT-E15 - API",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
