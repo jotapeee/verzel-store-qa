@@ -2,9 +2,9 @@
 
 Este repositório reúne as entregas do teste técnico para a vaga de **QA Júnior da Verzel**.
 
-O objetivo da avaliação é validar a entrega de **cupom de desconto e frete grátis** da Verzel Store por meio de planejamento de testes, execução manual, testes exploratórios, validações de API, evidências e automação.
+O objetivo da avaliação é validar a entrega de **cupom de desconto e frete grátis** da Verzel Store por meio de planejamento de testes, execução manual, testes exploratórios, validações de API, registro de evidências, documentação de bugs e automação com Playwright.
 
-> **Status atual:** V1 concluída para os testes funcionais. Os testes exploratórios e a automação com Playwright serão adicionados nas próximas etapas antes da entrega final.
+> **Status atual:** V1 e V2 concluídas. Os testes funcionais, exploratórios e automatizados foram finalizados, assim como a exportação da Collection do Postman. Resta apenas a revisão final do repositório e a publicação para entrega.
 
 ---
 
@@ -43,31 +43,33 @@ Os cálculos do carrinho são realizados pela API e apresentados pela interface,
 
 ## Estratégia de testes
 
-A execução foi organizada em etapas para separar planejamento, execução e evidências.
+### V1 — Testes manuais, exploratórios e API
 
-### V1 — Testes manuais e API
-
-A V1 contempla:
+A V1 foi concluída e contempla:
 
 - levantamento dos casos de teste funcionais;
 - cenários em BDD/Gherkin;
 - execução manual pela interface;
 - validações complementares pela API utilizando Postman;
 - comparação entre UI e API;
+- testes exploratórios;
 - registro das evidências;
-- documentação das divergências encontradas diretamente nos respectivos cenários;
-- testes exploratórios.
+- documentação das divergências encontradas;
+- relatório consolidado dos bugs identificados;
+- exportação da Collection do Postman.
 
-### V2 — Automação
+### V2 — Automação com Playwright
 
-A V2 será dedicada a:
+A V2 também foi concluída e contempla:
 
-- automação de pelo menos 3 cenários utilizando Playwright;
-- configuração e organização do projeto de automação;
-- instruções para execução local;
-- integração da automação à entrega final.
-
-As instruções desta seção serão atualizadas após a conclusão da V2.
+- configuração do Playwright Test com TypeScript;
+- execução em Chromium;
+- smoke test da aplicação;
+- automação de 4 cenários funcionais;
+- validação de estabilidade dos testes;
+- execução da suíte completa;
+- geração de screenshot, vídeo e trace conforme configuração do Playwright;
+- relatório HTML do Playwright.
 
 ---
 
@@ -80,21 +82,33 @@ VERZEL-STORE-QA/
 ├── .gitignore
 │
 ├── docs/
-│   │
 │   ├── funcionais/
 │   │   ├── casos-de-teste.md
 │   │   ├── bdd.md
 │   │   ├── execucao.md
 │   │   └── evidencias/
-│   │
-│   └── exploratorios/
-│       ├── casos-de-teste.md
-│       ├── bdd.md
-│       ├── execucao.md
-│       └── evidencias/
+│   ├── exploratorios/
+│   │   ├── casos-de-teste.md
+│   │   ├── bdd.md
+│   │   ├── execucao.md
+│   │   └── evidencias/
+│   └── bugs/
+│       └── bugs.md
 │
-└── postman/
-    └── Verzel-Store.postman_collection.json
+├── postman/
+│   └── Verzel-Store.postman_collection.json
+│
+└── automation/
+    ├── tests/
+    │   ├── smoke.spec.ts
+    │   └── functional/
+    │       ├── CT-F01-aplicar-cupom-valido.spec.ts
+    │       ├── CT-F06-cupom-invalido.spec.ts
+    │       ├── CT-F10-frete-gratis-acima-200.spec.ts
+    │       └── CT-F17-limite-maximo-quantidade.spec.ts
+    ├── playwright.config.ts
+    ├── package.json
+    └── package-lock.json
 ```
 
 ---
@@ -111,8 +125,10 @@ VERZEL-STORE-QA/
 | Cenários exploratórios em BDD | `docs/exploratorios/bdd.md` |
 | Execução dos testes exploratórios | `docs/exploratorios/execucao.md` |
 | Evidências exploratórias | `docs/exploratorios/evidencias/` |
+| Relatório de bugs | `docs/bugs/bugs.md` |
 | Collection do Postman | `postman/Verzel-Store.postman_collection.json` |
-| Automação Playwright | Será adicionada na V2 |
+| Automação Playwright | `automation/` |
+| Testes automatizados | `automation/tests/functional/` |
 
 ---
 
@@ -120,25 +136,9 @@ VERZEL-STORE-QA/
 
 Foram planejados e executados **20 cenários funcionais**, cobrindo os critérios de aceite e as regras de cálculo da entrega.
 
-Os cenários incluem, entre outros:
+### Resultado da execução funcional
 
-- aplicação do cupom `BEMVINDO10`;
-- validação do desconto de 10%;
-- case-insensitive do código do cupom;
-- tratamento de espaços nas extremidades;
-- cupom inexistente;
-- cupom expirado;
-- troca de cupom;
-- frete acima, abaixo e exatamente no limite de R$ 200,00;
-- interação entre desconto e frete grátis;
-- quantidade máxima de produtos;
-- arredondamento;
-- cálculo de subtotal;
-- cálculo do total final.
-
-### Resultado atual da execução funcional
-
-- **20** cenários funcionais executados;
+- **20** cenários executados;
 - **17** cenários concluídos sem divergências nas validações previstas;
 - **3** cenários apresentaram divergências:
   - `CT-F11`;
@@ -151,31 +151,59 @@ Os detalhes completos estão em:
 
 ---
 
-## Divergências encontradas
+## Testes exploratórios
 
-As divergências identificadas durante a execução foram documentadas diretamente nos respectivos casos de teste, junto com o resultado obtido, observações e evidências.
+Os testes exploratórios foram concluídos com o objetivo de complementar os critérios de aceite e investigar comportamentos de transição de estado, combinações de ações e situações não especificadas diretamente na documentação.
 
-### CT-F11 — Frete grátis no limite de R$ 200,00
+Foram explorados cenários como:
 
-Foi identificada cobrança de R$ 19,90 de frete para um carrinho com subtotal exatamente igual a R$ 200,00, apesar da regra definir frete grátis a partir desse valor, inclusive.
+- alteração de quantidade após aplicação do cupom;
+- redução de quantidade após aplicação do cupom;
+- remoção de produtos com cupom ativo;
+- perda e obtenção de frete grátis após alterações no carrinho;
+- remoção e reaplicação do mesmo cupom;
+- tentativas repetidas de aplicação;
+- alterações rápidas de quantidade;
+- persistência do cupom após esvaziar o carrinho;
+- diferentes combinações de produtos e quantidades;
+- combinações de valores e consistência monetária;
+- comparação direta entre UI e API;
+- limite máximo de quantidade;
+- formatos alternativos do código do cupom;
+- aplicação de cupom com carrinho vazio.
 
-A divergência foi reproduzida tanto na interface quanto na API.
+O cenário de espaço interno no código do cupom foi incorporado ao `CT-E14`, evitando duplicação de cobertura.
 
-### CT-F14 — Frete grátis após aplicação de cupom
+Os resultados completos estão em:
 
-O mesmo comportamento relacionado ao frete foi observado após a aplicação do cupom `BEMVINDO10` em um carrinho com subtotal de R$ 200,00.
+`docs/exploratorios/execucao.md`
 
-A execução confirmou que a inconsistência não está restrita à aplicação do desconto.
+---
 
-### CT-F17 — Limite máximo de quantidade na API
+## Bugs identificados
 
-A interface bloqueou corretamente quantidades superiores a 5 unidades do mesmo produto.
+Os bugs encontrados foram centralizados em:
 
-Entretanto, a API aceitou uma requisição com 6 unidades e retornou `200 OK`, processando o carrinho normalmente.
+`docs/bugs/bugs.md`
 
-Os detalhes completos e as evidências dessas divergências estão disponíveis em:
+### BUG-001 — Frete cobrado indevidamente para subtotal igual a R$ 200,00
 
-`docs/funcionais/execucao.md`
+O sistema mantém a cobrança de R$ 19,90 quando o subtotal é exatamente R$ 200,00, apesar da regra de frete grátis definir esse valor como limite inclusivo.
+
+O comportamento foi reproduzido tanto na interface quanto na API.
+
+Cenários relacionados:
+
+- `CT-F11`;
+- `CT-F14`.
+
+### BUG-002 — API permite quantidade superior ao limite máximo de 5 unidades
+
+A interface impede corretamente quantidades acima de 5 unidades por produto, porém a API aceita uma requisição com 6 unidades e processa o carrinho normalmente.
+
+Cenário relacionado:
+
+- `CT-F17`.
 
 ---
 
@@ -189,14 +217,7 @@ O principal endpoint utilizado durante os testes do carrinho foi:
 POST /api/carrinho/calcular
 ```
 
-As requisições foram utilizadas para:
-
-- validar regras de negócio independentemente da interface;
-- comparar os cálculos da API com os valores apresentados na UI;
-- validar cenários positivos e negativos;
-- investigar divergências encontradas durante os testes manuais.
-
-A Collection utilizada será disponibilizada em:
+A Collection utilizada está disponível em:
 
 ```text
 postman/Verzel-Store.postman_collection.json
@@ -204,80 +225,235 @@ postman/Verzel-Store.postman_collection.json
 
 ### Como importar a Collection
 
-1. Abra o Postman.
-2. Selecione **Import**.
-3. Escolha o arquivo `Verzel-Store.postman_collection.json`.
-4. Importe a Collection.
-5. Configure a variável `baseUrl` com:
+A Collection do Postman está disponível no repositório em:
 
-```text
-https://verzel-store.qa-test-verzel-store.workers.dev
-```
+`postman/Verzel-Store.postman_collection.json`
 
----
+Para utilizá-la:
 
-## Testes exploratórios
+1. Clone ou baixe este repositório para o seu computador.
+2. Localize o arquivo:
 
-Os testes exploratórios foram planejados para complementar os critérios de aceite e investigar comportamentos resultantes de alterações de estado do carrinho, combinações de ações e situações não especificadas diretamente pela documentação.
+   `postman/Verzel-Store.postman_collection.json`
 
-Entre os pontos planejados estão:
+3. Abra o Postman.
+4. Clique em **Import**.
+5. Selecione ou arraste manualmente o arquivo `Verzel-Store.postman_collection.json` para a janela de importação.
+6. Conclua a importação da Collection.
+7. Confirme que a variável `baseUrl` está configurada com:
 
-- alteração de quantidade após aplicação do cupom;
-- remoção de itens após aplicação do cupom;
-- perda e obtenção dinâmica de frete grátis;
-- reaplicação do cupom;
-- alterações rápidas de quantidade;
-- persistência do cupom após esvaziar o carrinho;
-- comparação direta UI x API;
-- exploração dos limites de quantidade;
-- entradas alternativas para o código do cupom;
-- uso de cupom com carrinho vazio;
-- cupom com espaço interno, como `bem vindo10`.
+   `https://verzel-store.qa-test-verzel-store.workers.dev`
 
-Os resultados ficarão disponíveis em:
+8. Abra uma das requisições e execute normalmente pelo botão **Send**.
 
-`docs/exploratorios/execucao.md`
+> O caminho `postman/Verzel-Store.postman_collection.json` indica apenas a localização do arquivo dentro deste repositório. Ele não deve ser digitado diretamente no campo de importação do Postman.
+
+> **Validação realizada:** a Collection exportada foi importada manualmente com sucesso no Postman.
 
 ---
 
 ## Automação com Playwright
 
-A automação será implementada na V2.
+A automação foi implementada utilizando **Playwright Test + TypeScript**.
 
-O teste técnico exige a automação de pelo menos 3 cenários com Playwright. Após a implementação, esta seção será atualizada com:
+Foram automatizados 4 cenários funcionais, além de um smoke test.
 
-- pré-requisitos;
-- instalação das dependências;
-- comandos para execução;
-- estrutura dos testes;
-- cenários automatizados;
-- forma de visualizar os resultados.
+### Cenários automatizados
+
+| Cenário | Objetivo |
+|---|---|
+| `CT-F01` | Aplicar o cupom válido `BEMVINDO10` e validar o desconto |
+| `CT-F06` | Rejeitar um cupom inexistente sem aplicar desconto |
+| `CT-F10` | Aplicar frete grátis para subtotal superior a R$ 200,00 |
+| `CT-F17` | Impedir quantidade superior a 5 unidades por produto na UI |
+
+Também existe:
+
+`automation/tests/smoke.spec.ts`
+
+responsável por validar o carregamento básico da aplicação.
+
+### Resultado da suíte automatizada
+
+A execução completa apresentou:
+
+```text
+5 passed
+```
+
+Os cenários automatizados foram executados de forma independente e também validados em conjunto.
+
+Os testes principais foram executados com repetição para verificar estabilidade, incluindo execuções com:
+
+```text
+--repeat-each=3
+```
+
+---
+
+## Instalação da automação
+
+### Pré-requisitos
+
+Antes de executar os testes automatizados, é necessário possuir:
+
+- Node.js instalado;
+- npm disponível no terminal;
+- acesso à internet para instalação inicial das dependências e do Chromium.
+
+### Instalar dependências
+
+A partir da raiz do repositório:
+
+#### Windows
+
+```bash
+npm.cmd install --prefix automation
+```
+
+Depois, instale o navegador Chromium utilizado pelo Playwright:
+
+```bash
+cd automation
+npx.cmd playwright install chromium
+cd ..
+```
+
+#### Linux / macOS
+
+```bash
+npm install --prefix automation
+```
+
+Depois:
+
+```bash
+cd automation
+npx playwright install chromium
+cd ..
+```
+
+O arquivo `package-lock.json` está versionado para manter as versões das dependências consistentes entre os ambientes.
+
+---
+
+## Como executar a automação
+
+### Windows
+
+Para executar todos os testes e acompanhar apenas pelo terminal:
+
+```bash
+npm.cmd test --prefix automation
+```
+
+Para executar todos os testes com o navegador visível:
+
+```bash
+npm.cmd run test:headed --prefix automation
+```
+
+Para abrir a interface interativa do Playwright, na qual é possível selecionar, executar e depurar cada teste:
+
+```bash
+npm.cmd run test:ui --prefix automation
+```
+
+Para abrir o relatório HTML após uma execução:
+
+```bash
+npm.cmd run report --prefix automation
+```
+
+### Linux / macOS
+
+Os mesmos scripts podem ser executados sem o sufixo `.cmd`:
+
+```bash
+npm test --prefix automation
+```
+
+```bash
+npm run test:headed --prefix automation
+```
+
+```bash
+npm run test:ui --prefix automation
+```
+
+```bash
+npm run report --prefix automation
+```
+
+---
+
+## Configuração do Playwright
+
+A configuração utiliza:
+
+- TypeScript;
+- Chromium;
+- `baseURL` da Verzel Store;
+- `screenshot: only-on-failure`;
+- `video: retain-on-failure`;
+- `trace: on-first-retry`;
+- reporter `list`;
+- reporter HTML.
+
+A `baseURL` permite que os testes utilizem navegação relativa, por exemplo:
+
+```ts
+await page.goto('/');
+```
+
+sem repetir a URL completa da aplicação em cada cenário.
+
+---
+
+## Estratégia da automação
+
+A automação prioriza:
+
+- testes independentes;
+- locators semânticos;
+- `getByRole()`;
+- `getByLabel()`;
+- `getByText()`;
+- atributos estáveis fornecidos pela aplicação, como `data-valor`;
+- assertions com `expect()`;
+- ausência de sleeps fixos;
+- ausência de `waitForTimeout`;
+- ausência de seletores posicionais quando existe alternativa mais estável.
+
+Não foi adotado Page Object Model nesta entrega por se tratar de uma suíte pequena e objetiva.
 
 ---
 
 ## Evidências
 
-As evidências foram separadas por tipo de teste para facilitar a navegação.
+As evidências dos testes manuais foram organizadas por tipo:
 
 ```text
 docs/funcionais/evidencias/
 docs/exploratorios/evidencias/
 ```
 
-Nas validações funcionais foram registradas evidências da interface e, quando aplicável, dos retornos da API.
+Foram utilizadas evidências quando elas agregavam valor à comprovação do comportamento observado.
+
+Em cenários cuja validação dependia principalmente de transições de estado ou interações sequenciais, imagens estáticas não foram adicionadas quando não representavam adequadamente o comportamento validado.
+
+Na automação, o Playwright também está configurado para gerar artefatos em situações de falha.
 
 ---
 
 ## Critérios de classificação
 
-## Critérios de classificação
-
-Durante a execução foram utilizados os seguintes status:
+Durante a execução manual foram utilizados os seguintes status:
 
 | Status | Significado |
 |---|---|
 | ✅ PASSOU | Comportamento conforme o esperado |
-| ❌ FALHOU | Comportamento divergente da regra esperada |
+| ❌ FALHOU | Comportamento divergente da regra ou expectativa do cenário |
 
 ---
 
@@ -290,9 +466,13 @@ A IA foi utilizada como ferramenta de apoio durante o teste para:
 - auxiliar na escrita dos cenários em BDD/Gherkin;
 - revisar a documentação em Markdown;
 - apoiar a organização do repositório;
-- discutir a classificação de comportamentos observados durante a execução.
+- discutir a classificação de comportamentos observados durante a execução;
+- apoiar a estruturação do relatório de bugs;
+- apoiar o planejamento e a revisão da automação com Playwright.
 
 A execução dos testes na interface e na API, coleta de evidências, análise dos retornos e reprodução dos comportamentos foram realizadas manualmente.
+
+Na V2, a implementação da automação foi realizada com apoio de IA no ambiente de desenvolvimento, com validação dos cenários por meio da execução real dos testes.
 
 ---
 
@@ -300,17 +480,36 @@ A execução dos testes na interface e na API, coleta de evidências, análise d
 
 - navegador web — execução dos testes de interface;
 - Postman — validação da API;
+- Playwright — automação dos cenários;
+- TypeScript — implementação dos testes automatizados;
 - Markdown — documentação dos testes e resultados;
 - Git/GitHub — versionamento e entrega;
-- Playwright — automação dos cenários na V2.
+- Cursor — ambiente de desenvolvimento utilizado durante a automação.
 
 ---
 
-## Observações sobre o ambiente
+## Status final do projeto
 
-Durante os testes foram respeitadas as simplificações e limitações descritas na documentação do ambiente.
+### V1
 
-Não foram tratados como bugs comportamentos explicitamente definidos como esperados ou itens declarados fora do escopo.
+- ✅ Testes funcionais
+- ✅ Testes exploratórios
+- ✅ Evidências
+- ✅ Validação de API
+- ✅ Collection do Postman
+- ✅ Relatório de bugs
+- ✅ Documentação
+
+### V2
+
+- ✅ Playwright configurado
+- ✅ Smoke test
+- ✅ CT-F01 automatizado
+- ✅ CT-F06 automatizado
+- ✅ CT-F10 automatizado
+- ✅ CT-F17 automatizado
+- ✅ Estabilidade validada
+- ✅ Suíte completa aprovada
 
 ---
 
