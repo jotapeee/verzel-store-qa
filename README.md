@@ -4,7 +4,7 @@ Este repositório reúne as entregas do teste técnico para a vaga de **QA Júni
 
 O objetivo da avaliação é validar a entrega de **cupom de desconto e frete grátis** da Verzel Store por meio de planejamento de testes, execução manual, testes exploratórios, validações de API, registro de evidências, documentação de bugs e automação com Playwright.
 
-> **Status atual:** V1 e V2 concluídas. Os testes funcionais, exploratórios e automatizados foram finalizados, assim como a exportação da Collection do Postman. Resta apenas a revisão final do repositório e a publicação para entrega.
+> **Status atual:** V1 e V2 concluídas.
 
 ---
 
